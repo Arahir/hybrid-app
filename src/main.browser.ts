@@ -8,6 +8,9 @@ import {App} from './app/app';
 
 import { UpgradeAdapter } from '@angular/upgrade';
 import * as angular from '@angular/upgrade/src/angular_js';
+import 'kittensApp';
+
+console.log(angular)
 
 // enableProdMode()
 

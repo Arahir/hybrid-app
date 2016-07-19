@@ -4,6 +4,8 @@
   "dependencies": {},
   "globalDependencies": {
     "core-js": "registry:dt/core-js#0.0.0+20160602141332",
+    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#ba257a9b91bc0de1bdd9091b6723194c905a902a",
+    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#ba257a9b91bc0de1bdd9091b6723194c905a902a",
     "node": "registry:dt/node#6.0.0+20160621231320"
   }
 }

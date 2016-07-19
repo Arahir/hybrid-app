@@ -6,9 +6,11 @@ import '@angular/platform-browser';
 import '@angular/core';
 import '@angular/http';
 import '@angular/router';
+
+//hybrid app
+import 'angular';
 import '@angular/upgrade';
 
-import 'angular';
 
 
 // RxJS 5

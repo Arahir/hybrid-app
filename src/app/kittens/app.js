@@ -11,7 +11,7 @@ let carouselComponent = {
   controller: CarouselController,
   bindings: {}
 }
-angular
+module.exports = angular
   .module('cl-kitten', [])
   .component('clCarousel', carouselComponent);
 

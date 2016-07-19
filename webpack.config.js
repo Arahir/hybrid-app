@@ -44,7 +44,10 @@ var defaultConfig = {
 
   resolve: {
     root: [ path.join(__dirname, 'src') ],
-    extensions: ['', '.ts', '.js']
+    extensions: ['', '.ts', '.js'],
+    alias: {
+      'kittensApp': 'app/kittens/app.js'
+    }
   },
 
   devServer: {
