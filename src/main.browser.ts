@@ -9,8 +9,7 @@ import {App} from './app/app';
 import { UpgradeAdapter } from '@angular/upgrade';
 import * as angular from '@angular/upgrade/src/angular_js';
 import 'kittensApp';
-
-console.log(angular)
+import { CarouselTitle } from './app/carousel-title/carousel-title';
 
 // enableProdMode()
 
@@ -24,5 +23,9 @@ console.log(angular)
  * Create our upgradeAdapter
  */
 const upgradeAdapter: UpgradeAdapter = new UpgradeAdapter();
+
+angular.module('cl-kitten')
+  .directive('cdlCarouselTitle',
+             upgradeAdapter.downgradeNg2Component(CarouselTitle));
 
 upgradeAdapter.bootstrap(document.body, ['cl-kitten']);
