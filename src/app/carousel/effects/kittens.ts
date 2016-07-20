@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Effect, StateUpdates } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 const KITTENS: string[] = [
   "https://pbs.twimg.com/profile_images/619573624903761920/EGZ2I6wG.jpg",
@@ -14,7 +15,7 @@ export class KittensEffects {
     .whenAction('LOAD_KITTENS')
     .map(update => (update.action.payload))
     .mergeMap(params => {
-      return {type: 'KITTENS_LOADED', payload: KITTENS};
+      return Observable.of({type: 'KITTENS_LOADED', payload: KITTENS});
     })
 
     constructor(private updates$: StateUpdates<any>) { }

@@ -9,6 +9,8 @@ import 'kittensApp';
 import { CarouselTitle } from './app/carousel-title/carousel-title';
 import { CarouselComponent } from './app/carousel/carousel';
 
+import { KITTENS_PROVIDERS } from './app/carousel/carousel';
+
 // enableProdMode()
 
 // bootstrap(App, [
@@ -21,6 +23,8 @@ import { CarouselComponent } from './app/carousel/carousel';
  * Create our upgradeAdapter
  */
 const upgradeAdapter: UpgradeAdapter = new UpgradeAdapter();
+
+upgradeAdapter.addProvider(KITTENS_PROVIDERS);
 
 angular.module('cl-kitten')
   .directive('cdlCarouselTitle',
