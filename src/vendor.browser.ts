@@ -11,8 +11,6 @@ import '@angular/router';
 import 'angular';
 import '@angular/upgrade';
 
-
-
 // RxJS 5
 // import 'rxjs/Rx';
 
