@@ -46,7 +46,7 @@ var defaultConfig = {
     root: [ path.join(__dirname, 'src') ],
     extensions: ['', '.ts', '.js'],
     alias: {
-      'kittensApp': 'app/kittens/app.js'
+      'kittensApp': 'app/kittens/app.ts'
     }
   },
 

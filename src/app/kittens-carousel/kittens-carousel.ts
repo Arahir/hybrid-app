@@ -8,6 +8,8 @@ import { states } from './states';
 
 import { CarouselComponent } from './../carousel/carousel';
 
+import { Kitty } from './models/kitty';
+
 @Component({
   selector: 'cdl-kittens-carousel',
   templateUrl: 'kittens-carousel.html',
@@ -15,14 +17,24 @@ import { CarouselComponent } from './../carousel/carousel';
 })
 export class KittensCarouselComponent implements OnInit{
   public kittensModel;
+  public currentKittyModel;
 
   constructor(private _store: Store<any>) {
-    this.kittensModel = this._store.select('kittens');
+    this.kittensModel = this._store.select('kittens').map((kittens: Kitty[]) => {
+      return kittens.map((kitty) => kitty.photo)
+    });
+    this.currentKittyModel = this._store.select('currentKitty');
   }
 
   ngOnInit() {
     this._store.dispatch({type: 'LOAD_KITTENS', payload: {}})
   }
+
+  carouselNavigation(index){
+    this._store.dispatch({type: 'CHANGE_KITTY', payload: {index}})
+  }
+
+
 }
 
 export const KITTENS_PROVIDERS = [

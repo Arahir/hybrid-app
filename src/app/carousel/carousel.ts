@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'cdl-carousel',
@@ -6,19 +6,23 @@ import { Component, Input } from '@angular/core';
 })
 export class CarouselComponent {
   @Input() data: string[];
-  public current: number = 0;
+  @Input() current: number;
+  @Output() navigation = new EventEmitter();
 
   constructor() {}
 
   navigate(index) {
+    let current;
     if (index >= this.data.length ) {
-      this.current = 0;
+      current = 0;
     }
     else if (index < 0) {
-      this.current = this.data.length - 1;
+      current = this.data.length - 1;
     }
     else {
-      this.current = index;
+      current = index;
     }
+
+    this.navigation.emit(current);
   }
 }

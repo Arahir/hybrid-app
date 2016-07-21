@@ -1,1 +1,5 @@
-<cdl-carousel [data]="(kittensModel | async)"></cdl-carousel>
+<cdl-carousel
+  [data]="(kittensModel | async)"
+  [current]="(currentKittyModel | async)"
+  (navigation)="carouselNavigation($event)"
+></cdl-carousel>
