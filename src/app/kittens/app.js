@@ -1,17 +1,17 @@
 let template = `
                 <cdl-carousel-title></cdl-carousel-title>
-                <cdl-carousel></cdl-carousel>
+                <cdl-kittens-carousel></cdl-kittens-carousel>
                 `;
 
-let carouselComponent = {
+let appComponent = {
   template: template,
-  controller: CarouselController,
+  controller: AppController,
   bindings: {}
 }
 module.exports = angular
-  .module('cl-kitten', [])
-  .component('cdlKittensCarousel', carouselComponent);
+  .module('cdl-kittens', [])
+  .component('cdlApp', appComponent);
 
 
-CarouselController.$inject = [];
-function CarouselController() {}
+AppController.$inject = [];
+function AppController() {}

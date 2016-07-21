@@ -7,7 +7,7 @@ import { UpgradeAdapter } from '@angular/upgrade';
 import * as angular from '@angular/upgrade/src/angular_js';
 import 'kittensApp';
 import { CarouselTitle } from './app/carousel-title/carousel-title';
-import { CarouselComponent } from './app/carousel/carousel';
+import { KittensCarouselComponent, KITTENS_PROVIDERS } from './app/kittens-carousel/kittens-carousel';
 
 // enableProdMode()
 
@@ -22,10 +22,12 @@ import { CarouselComponent } from './app/carousel/carousel';
  */
 const upgradeAdapter: UpgradeAdapter = new UpgradeAdapter();
 
-angular.module('cl-kitten')
+upgradeAdapter.addProvider(KITTENS_PROVIDERS);
+
+angular.module('cdl-kittens')
   .directive('cdlCarouselTitle',
              upgradeAdapter.downgradeNg2Component(CarouselTitle))
-  .directive('cdlCarousel',
-             upgradeAdapter.downgradeNg2Component(CarouselComponent));
+  .directive('cdlKittensCarousel',
+             upgradeAdapter.downgradeNg2Component(KittensCarouselComponent));
 
-upgradeAdapter.bootstrap(document.body, ['cl-kitten']);
+upgradeAdapter.bootstrap(document.body, ['cdl-kittens']);

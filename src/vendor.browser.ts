@@ -11,7 +11,10 @@ import '@angular/router';
 import 'angular';
 import '@angular/upgrade';
 
-
+//ngrx
+import '@ngrx/core';
+import '@ngrx/store';
+import '@ngrx/effects';
 
 // RxJS 5
 // import 'rxjs/Rx';
