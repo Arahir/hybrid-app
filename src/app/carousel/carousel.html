@@ -1,7 +1,7 @@
 <button (click)="navigate(current - 1)">
   &lt;
 </button>
-<img src="{{ data[current] }}"/>
+<img (click)="navigate(current + 1)" src="{{ data[current] }}"/>
 <button (click)="navigate(current + 1)">
   &gt;
 </button>
