@@ -9,6 +9,8 @@ import 'kittensApp';
 import { CarouselTitle } from './app/carousel-title/carousel-title';
 import { KittensCarouselComponent, KITTENS_PROVIDERS } from './app/kittens-carousel/kittens-carousel';
 
+import { StoreService } from './app/shared/store.service';
+
 // enableProdMode()
 
 // bootstrap(App, [
@@ -23,11 +25,14 @@ import { KittensCarouselComponent, KITTENS_PROVIDERS } from './app/kittens-carou
 const upgradeAdapter: UpgradeAdapter = new UpgradeAdapter();
 
 upgradeAdapter.addProvider(KITTENS_PROVIDERS);
+upgradeAdapter.addProvider(StoreService);
 
 angular.module('cdl-kittens')
   .directive('cdlCarouselTitle',
              upgradeAdapter.downgradeNg2Component(CarouselTitle))
   .directive('cdlKittensCarousel',
-             upgradeAdapter.downgradeNg2Component(KittensCarouselComponent));
+             upgradeAdapter.downgradeNg2Component(KittensCarouselComponent))
+  .factory('store',
+            upgradeAdapter.downgradeNg2Provider(StoreService));
 
 upgradeAdapter.bootstrap(document.body, ['cdl-kittens']);
