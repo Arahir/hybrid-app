@@ -10,6 +10,7 @@ import '@angular/router';
 //hybrid app
 import 'angular';
 import '@angular/upgrade';
+import 'angular-ui-router';
 
 //ngrx
 import '@ngrx/core';

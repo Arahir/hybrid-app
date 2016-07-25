@@ -12,9 +12,19 @@ let appComponent = {
   bindings: {}
 }
 module.exports = angular
-  .module('cdl-kittens', [])
+  .module('cdl-kittens', ['ui.router'])
   .component('cdlCatName', CatNameComponent)
-  .component('cdlApp', appComponent);
+  .component('cdlApp', appComponent)
+  .controller('AppController', AppController)
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+    $stateProvider
+      .state('home', {
+        template: "<cdl-app></cdl-app>",
+        url: '/'
+      });
+      $locationProvider.html5Mode(true);
+      $urlRouterProvider.when('', '/') ;
+});
 
 
 AppController.$inject = [];
