@@ -6,6 +6,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CarouselComponent {
   @Input() data: string[];
+  current: number;
 
-  constructor() {}
+  constructor() {
+    this.current = 0;
+  }
+
+  navigate(index) {
+    this.current = (index + this.data.length) % this.data.length;
+  }
 }
