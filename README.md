@@ -1,8 +1,7 @@
-## angular2-seed
+## Hybrid app
 
-A simple starter project demonstrating the basic concepts of Angular 2.
+A simple starter project demonstrating the basic concepts of Angular 2 upgrade.
 
-This branch uses [Webpack](https://webpack.github.io/) for Development. There is also a SystemJS branch available.
 
 ### Usage
 - Clone or fork this repository
